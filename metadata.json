@@ -1,0 +1,6 @@
+{
+  "name": "MediGuide by Usman",
+  "description": "Explore health information with confidence. Search medicines, explore health resources, manage patient records, find doctors, and keep medical-store records in one place.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

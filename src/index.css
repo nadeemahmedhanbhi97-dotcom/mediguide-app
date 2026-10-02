@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Exact Reference Palette */
+    --bg-warm-ivory: #FBF8F2;
+    --primary-teal: #0E3B36;
+    --primary-teal-dark: #092824;
+    --primary-teal-light: rgba(14, 59, 54, 0.08);
+    --accent-gold: #B08D57;
+    --accent-gold-dark: #8E6D38;
+    --accent-gold-light: rgba(176, 141, 87, 0.12);
+    --card-bg: #FFFFFF;
+    --card-border: #E8E2D8;
+    --card-border-subtle: rgba(14, 59, 54, 0.10);
+    --ink: #101827;
+    --ink-light: #374151;
+    --muted: #5B6577;
+
+    /* Theme color variables */
+    --navy-900: #0E3B36;
+    --navy-800: #0E3B36;
+    --navy-700: #144842;
+    --gold-500: #B08D57;
+    --gold-400: #B08D57;
+    --gold-300: #D8C39D;
+    --ivory: #FBF8F2;
+    --color-emerald-deep: #0E3B36;
+    --color-warm-ivory: #FBF8F2;
+    --color-brass-gold: #B08D57;
+    --color-soft-sage: #FBF8F2;
+    --color-warm-divider: #E8E2D8;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #101827;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background-color: #FBF8F2;
+  }
+
+  h1, h2, h3, .font-serif, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ========================================================================= */
+/* FLAT TOP NAVIGATION TABS — TRANSPARENT WITH THIN GOLD UNDERLINE ON ACTIVE */
+/* ========================================================================= */
+.nav-tab-flat {
+  position: relative;
+  background: transparent;
+  color: #0E3B36;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+}
+
+.nav-tab-flat:hover {
+  color: #0E3B36;
+  background-color: rgba(14, 59, 54, 0.05);
+}
+
+.nav-tab-flat-active {
+  position: relative;
+  background: transparent;
+  color: #0E3B36;
+  border: none;
+  border-bottom: 2.5px solid #B08D57;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+}
+
+/* Backward-compatible map for previous button class names to sleek, muted brass/teal */
+.gold-btn-3d {
+  background-color: #B08D57;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border: 1px solid #9C7A47;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(14, 59, 54, 0.06);
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  transition: all 0.15s ease-in-out;
+  text-shadow: none;
+}
+
+.gold-btn-3d:hover {
+  background-color: #9C7A47;
+  border-color: #8E6D38;
+  color: #FFFFFF;
+}
+
+.gold-btn-3d:active {
+  transform: translateY(1px);
+}
+
+.gold-btn-3d-active {
+  background-color: #0E3B36;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border: 1px solid #092824;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(14, 59, 54, 0.12);
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  transition: all 0.15s ease-in-out;
+  text-shadow: none;
+}
+
+.gold-btn-3d-active:hover {
+  background-color: #092824;
+}
+
+/* ========================================================================= */
+/* ACCENTS, PILLS, & CARDS                                                   */
+/* ========================================================================= */
+/* Muted brass/gold accent pill */
+.tag-pill-gold {
+  background-color: rgba(176, 141, 87, 0.12);
+  color: #8E6D38;
+  border: 1px solid rgba(176, 141, 87, 0.35);
+  border-radius: 9999px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Pure solid white card with 1px border, small 2-4px radius, no heavy shadows */
+.card-clean {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E2D8;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(14, 59, 54, 0.04);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', Tahoma, sans-serif;
+}
