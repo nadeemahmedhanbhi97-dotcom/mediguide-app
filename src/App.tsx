@@ -15,11 +15,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 pb-12">
-      {/* Header with Camera Trigger */}
+      {/* Top Navigation Bar */}
       <SearchHeader onOpenScanner={() => setIsCameraOpen(true)} />
 
       <main className="max-w-4xl mx-auto px-4 mt-6 space-y-6">
-        {/* Scanned Medicine Banner */}
+        {/* Floating Quick Scanner Button */}
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsCameraOpen(true)}
+            className="px-4 py-2 bg-emerald-600 text-white rounded-lg font-medium shadow hover:bg-emerald-700 flex items-center gap-2"
+          >
+            📷 Scan Medicine Packaging
+          </button>
+        </div>
+
+        {/* Scanned Result Banner */}
         {scannedMedicine && (
           <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex justify-between items-center">
             <div>
@@ -35,14 +45,18 @@ export default function App() {
           </div>
         )}
 
-        {/* AI Health Assistant Chatbot */}
-        <HealthChatbot scannedMedicine={scannedMedicine || undefined} />
+        {/* Always Visible AI Assistant Chatbot */}
+        <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+          <HealthChatbot scannedMedicine={scannedMedicine || undefined} />
+        </section>
 
-        {/* Doctor Search & Directory */}
-        <DoctorSearch />
+        {/* Sibi Doctors Directory */}
+        <section>
+          <DoctorSearch />
+        </section>
       </main>
 
-      {/* OCR Camera Modal */}
+      {/* Camera Modal */}
       {isCameraOpen && (
         <CameraCaptureModal 
           onClose={() => setIsCameraOpen(false)} 
