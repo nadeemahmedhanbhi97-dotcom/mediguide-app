@@ -15,9 +15,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 pb-12">
+      {/* Header with Camera Trigger */}
       <SearchHeader onOpenScanner={() => setIsCameraOpen(true)} />
 
       <main className="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+        {/* Scanned Medicine Banner */}
         {scannedMedicine && (
           <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex justify-between items-center">
             <div>
@@ -33,7 +35,7 @@ export default function App() {
           </div>
         )}
 
-        {/* AI Assistant Chatbot */}
+        {/* AI Health Assistant Chatbot */}
         <HealthChatbot scannedMedicine={scannedMedicine || undefined} />
 
         {/* Doctor Search & Directory */}
