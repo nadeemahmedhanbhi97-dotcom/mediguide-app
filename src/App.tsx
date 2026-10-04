@@ -12,7 +12,7 @@ export default function App() {
   const handleScanComplete = (medicineName: string) => {
     setScannedMedicine(medicineName);
     setIsCameraOpen(false);
-    setActiveTab('medicine'); // Scan complete hone par medicine tab auto-open hoga
+    setActiveTab('medicine');
   };
 
   return (
@@ -30,7 +30,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Quick Scan Trigger Button */}
           <button
             onClick={() => setIsCameraOpen(true)}
             className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs rounded-xl shadow-sm transition flex items-center gap-1.5 cursor-pointer"
@@ -40,7 +39,7 @@ export default function App() {
         </div>
 
         {/* Tab Navigation Menu */}
-        <div className="max-w-4xl mx-auto px-4 flex border-t border-gray-100 gap-2 pt-2 pb-1">
+        <div className="max-w-4xl mx-auto px-4 flex border-t border-gray-100 gap-2 pt-2 pb-1 overflow-x-auto">
           <button
             onClick={() => setActiveTab('doctors')}
             className={`px-4 py-2 text-xs font-semibold rounded-lg transition ${
@@ -77,7 +76,6 @@ export default function App() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 mt-6 space-y-6">
-        {/* Scanned Result Banner */}
         {scannedMedicine && (
           <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-2xl flex justify-between items-center shadow-sm">
             <div>
@@ -93,7 +91,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Dynamic Tab Views */}
+        {/* Navigation Tab Views */}
         {activeTab === 'doctors' && (
           <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
             <DoctorSearch />
