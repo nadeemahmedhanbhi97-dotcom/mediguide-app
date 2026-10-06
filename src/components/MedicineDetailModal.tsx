@@ -195,6 +195,7 @@ export const MedicineDetailModal: React.FC<MedicineDetailModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setDeductQty((prev) => Math.max(1, prev - 1))}
+                      aria-label="Decrease deduct quantity"
                       className="p-1 hover:bg-stone-100 rounded text-stone-600"
                     >
                       <Minus className="w-3.5 h-3.5" />
@@ -203,6 +204,7 @@ export const MedicineDetailModal: React.FC<MedicineDetailModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setDeductQty((prev) => prev + 1)}
+                      aria-label="Increase deduct quantity"
                       className="p-1 hover:bg-stone-100 rounded text-stone-600"
                     >
                       <Plus className="w-3.5 h-3.5" />

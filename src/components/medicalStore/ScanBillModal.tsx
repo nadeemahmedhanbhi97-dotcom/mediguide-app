@@ -146,7 +146,7 @@ export const ScanBillModal: React.FC<ScanBillModalProps> = ({ isOpen, onClose, o
               <p className="text-xs text-stone-900/70">Capture paper receipt or upload photo to auto-extract items</p>
             </div>
           </div>
-          <button onClick={handleClose} className="p-1.5 text-stone-500 hover:text-stone-800 transition">
+          <button type="button" onClick={handleClose} aria-label="Close scan bill modal" className="p-1.5 text-stone-500 hover:text-stone-800 transition">
             <X className="w-5 h-5" />
           </button>
         </div>

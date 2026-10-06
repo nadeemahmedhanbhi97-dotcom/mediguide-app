@@ -293,6 +293,7 @@ export const CameraCaptureModal: React.FC<CameraCaptureModalProps> = ({
                 onClick={switchCamera}
                 className="absolute top-3 right-3 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition border border-white/20"
                 title="Switch Camera (Front/Rear)"
+                aria-label="Switch camera front or rear"
               >
                 <RefreshCw className="w-4 h-4" />
               </button>
@@ -335,6 +336,7 @@ export const CameraCaptureModal: React.FC<CameraCaptureModalProps> = ({
           type="file"
           accept="image/*,application/pdf"
           className="hidden"
+          aria-label="Upload medicine image or PDF"
           onChange={handleFileUpload}
         />
 

@@ -84,10 +84,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   value={localQuery}
                   onChange={(e) => setLocalQuery(e.target.value)}
                   placeholder="Search medicine brand, generic formula, drug class..."
+                  aria-label="Search medicine brand, generic formula, or drug class"
                   className="w-full py-2.5 px-2 bg-transparent text-xs sm:text-sm text-white placeholder-emerald-200/50 focus:outline-none"
                 />
                 <button
                   type="submit"
+                  aria-label="Search medicines"
                   className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-stone-950 text-xs sm:text-sm font-bold shrink-0 transition flex items-center gap-1.5 cursor-pointer shadow-[0_0_20px_rgba(16,185,129,0.35)] active:scale-[0.98]"
                 >
                   Search

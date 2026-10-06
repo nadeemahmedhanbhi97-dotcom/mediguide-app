@@ -356,6 +356,7 @@ export const SmartMedicineIdentifier: React.FC<SmartMedicineIdentifierProps> = (
                   accept="image/*"
                   capture="environment"
                   className="hidden"
+                  aria-label="Upload medicine image"
                 />
                 <div className="w-12 h-12 rounded-full bg-[#E8F3EE] text-[#0E3B36] group-hover:scale-105 transition flex items-center justify-center mx-auto">
                   <Upload className="w-6 h-6" />
@@ -385,6 +386,7 @@ export const SmartMedicineIdentifier: React.FC<SmartMedicineIdentifierProps> = (
                       if (fileInputRef.current) fileInputRef.current.value = '';
                     }}
                     className="absolute top-2 right-2 p-1 rounded-full bg-stone-900/70 text-white hover:bg-stone-900 transition"
+                    aria-label="Remove selected medicine image"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -430,11 +432,13 @@ export const SmartMedicineIdentifier: React.FC<SmartMedicineIdentifierProps> = (
                   }
                 }}
                 placeholder="Type medicine name or formula (e.g. Panadol, Augmentin, Brufen, Metformin, Disprin)..."
+                aria-label="Search medicine by name or formula"
                 className="w-full pl-11 pr-24 py-3 bg-white border border-[#E8E2D8] rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#0E3B36]/20 focus:border-[#0E3B36] shadow-xs"
               />
               <button
                 type="button"
                 onClick={() => handleIdentifyByText(textInput)}
+                aria-label="Identify medicine from text search"
                 className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 rounded-lg bg-[#0E3B36] hover:bg-[#092824] text-white text-xs font-bold transition cursor-pointer shadow-xs"
               >
                 Identify
@@ -740,6 +744,7 @@ export const SmartMedicineIdentifier: React.FC<SmartMedicineIdentifierProps> = (
                     type="button"
                     onClick={() => setDeductQuantity((prev) => Math.max(1, prev - 1))}
                     className="p-2 rounded-lg hover:bg-stone-100 text-stone-600 cursor-pointer"
+                    aria-label="Decrease deduct quantity"
                   >
                     <Minus className="w-4 h-4" />
                   </button>
@@ -751,6 +756,7 @@ export const SmartMedicineIdentifier: React.FC<SmartMedicineIdentifierProps> = (
                     type="button"
                     onClick={() => setDeductQuantity((prev) => prev + 1)}
                     className="p-2 rounded-lg hover:bg-stone-100 text-stone-600 cursor-pointer"
+                    aria-label="Increase deduct quantity"
                   >
                     <Plus className="w-4 h-4" />
                   </button>

@@ -332,6 +332,7 @@ export const DoctorSearch: React.FC<DoctorSearchProps> = ({ onBookOrVisit }) => 
                 step="5"
                 value={searchRadiusKm}
                 onChange={(e) => setSearchRadiusKm(Number(e.target.value))}
+                aria-label="Search radius in kilometers"
                 className="w-full accent-[#0E3B36] cursor-pointer"
               />
               <span className="text-xs font-mono font-bold text-[#0E3B36] min-w-[50px]">
@@ -391,6 +392,7 @@ export const DoctorSearch: React.FC<DoctorSearchProps> = ({ onBookOrVisit }) => 
                 value={customAreaQuery}
                 onChange={(e) => setCustomAreaQuery(e.target.value)}
                 placeholder="e.g. Clifton, Johar Town..."
+                aria-label="Search area, hospital, or neighborhood"
                 className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs font-medium text-stone-800"
               />
             </div>
@@ -405,6 +407,7 @@ export const DoctorSearch: React.FC<DoctorSearchProps> = ({ onBookOrVisit }) => 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by Doctor Name, Specialty, Clinic or Hospital..."
+              aria-label="Search doctors by name, specialty, clinic, or hospital"
               className="w-full pl-10 pr-4 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-medium text-stone-900"
             />
           </div>

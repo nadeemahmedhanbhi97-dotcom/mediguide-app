@@ -331,7 +331,7 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
             <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
             <span className="font-semibold">{errorMessage}</span>
           </div>
-          <button onClick={() => setErrorMessage(null)} className="text-stone-400 hover:text-stone-600">
+          <button type="button" onClick={() => setErrorMessage(null)} aria-label="Dismiss error" className="text-stone-400 hover:text-stone-600">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -344,11 +344,14 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
           value={patientSearchQuery}
           onChange={(e) => setPatientSearchQuery(e.target.value)}
           placeholder="Search your patient records by name, phone, allergies, or notes..."
+          aria-label="Search patient records by name, phone, allergies, or notes"
           className="w-full pl-4 pr-10 py-2.5 bg-white border border-[#E8E2D8] rounded-[4px] text-xs sm:text-sm text-[#101827] placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#0E3B36]/20"
         />
         {patientSearchQuery && (
           <button
+            type="button"
             onClick={() => setPatientSearchQuery('')}
+            aria-label="Clear patient search"
             className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600"
           >
             <X className="w-4 h-4" />
@@ -526,7 +529,9 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
                 <span>{editingPatientId ? 'Edit Patient Record' : 'Add New Patient Record'}</span>
               </h3>
               <button
+                type="button"
                 onClick={() => setIsFormOpen(false)}
+                aria-label="Close patient form"
                 className="p-1.5 rounded-[4px] text-stone-400 hover:text-stone-700"
               >
                 <X className="w-5 h-5" />
@@ -549,6 +554,7 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
                       onClick={() => setPhotoPreview(undefined)}
                       className="absolute -top-1.5 -right-1.5 p-1 rounded-full bg-rose-600 text-white hover:bg-rose-700"
                       title="Remove photo"
+                      aria-label="Remove photo"
                     >
                       <X className="w-3 h-3" />
                     </button>
@@ -775,7 +781,9 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
                 Patient Medical Monograph
               </h3>
               <button
+                type="button"
                 onClick={() => setIsViewingPatient(null)}
+                aria-label="Close patient details"
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
               >
                 <X className="w-5 h-5" />
@@ -887,10 +895,12 @@ export const PatientRecords: React.FC<PatientRecordsProps> = ({
                 <span>Log Clinical Doctor Visit</span>
               </h3>
               <button
+                type="button"
                 onClick={() => {
                   setIsVisitModalOpen(false);
                   if (onClearSelectedDoctor) onClearSelectedDoctor();
                 }}
+                aria-label="Close visit form"
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
               >
                 <X className="w-5 h-5" />

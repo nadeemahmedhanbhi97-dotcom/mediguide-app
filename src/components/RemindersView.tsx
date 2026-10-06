@@ -283,6 +283,7 @@ export const RemindersView: React.FC<RemindersViewProps> = ({ currentUserId }) =
                   onClick={() => deleteReminder(rem.id)}
                   className="p-1.5 text-slate-400 hover:text-rose-600"
                   title="Delete reminder"
+                  aria-label="Delete reminder"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>

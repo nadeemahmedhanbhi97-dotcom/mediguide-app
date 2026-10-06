@@ -480,8 +480,18 @@ Respond ONLY with a valid JSON object matching this schema:
   }
 });
 
+app.get(['/api/medicine/identify', '/api/identify'], (_req, res) => {
+  res.setHeader('Allow', 'POST');
+  return res.status(405).json({ success: false, error: 'Use POST.' });
+});
+
+app.options(['/api/medicine/identify', '/api/identify'], (_req, res) => {
+  res.setHeader('Allow', 'POST, OPTIONS');
+  return res.status(204).end();
+});
+
 // Smart Medicine Identification with Complete Uses, Dosage, Side Effects & Precautions
-app.post('/api/medicine/identify', async (req, res) => {
+app.post(['/api/medicine/identify', '/api/identify'], async (req, res) => {
   const apiKey = process.env.GEMINI_API_KEY?.trim();
   const { imageBase64, mimeType = 'image/jpeg', textQuery = '' } = req.body;
 

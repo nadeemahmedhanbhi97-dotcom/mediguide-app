@@ -89,19 +89,24 @@ export default function HealthChatbot({ scannedMedicine }: { scannedMedicine?: s
           type="text"
           className="flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-emerald-500"
           placeholder="Sawal likhein ya mic se bolein..."
+          aria-label="Ask a health question"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
         />
         <button 
+          type="button"
           onClick={handleVoiceInput}
           className="bg-gray-100 border text-gray-600 px-3 py-2 rounded-lg text-sm hover:bg-gray-200"
           title="Voice Search"
+          aria-label="Start voice search"
         >
           🎤
         </button>
         <button 
+          type="button"
           onClick={handleSendMessage}
+          aria-label="Send health question"
           className="bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-emerald-700"
         >
           Send

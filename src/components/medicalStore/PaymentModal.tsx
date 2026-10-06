@@ -54,7 +54,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
             <h3 className="text-base font-bold font-serif text-stone-900">Record Payment</h3>
             <p className="text-xs text-stone-500">Bill/Token: <span className="font-mono font-bold text-stone-900">{bill.billTokenNumber}</span> • {bill.customerName}</p>
           </div>
-          <button onClick={onClose} className="p-1 text-stone-400 hover:text-stone-700">
+          <button type="button" onClick={onClose} aria-label="Close payment form" className="p-1 text-stone-400 hover:text-stone-700">
             <X className="w-5 h-5" />
           </button>
         </div>

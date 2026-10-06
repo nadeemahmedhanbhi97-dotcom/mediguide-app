@@ -97,6 +97,7 @@ export const MedicineSearch: React.FC = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search medicine name, formula, or use..."
+            aria-label="Search medicines by name, formula, or use"
             className="w-full pl-10 pr-24 py-3 bg-stone-50 border border-stone-300 rounded-xl text-xs font-medium text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#0E3B36]/20 focus:border-[#0E3B36]"
           />
 
@@ -106,6 +107,7 @@ export const MedicineSearch: React.FC = () => {
             onClick={handleSimulatedScan}
             className="absolute right-2.5 px-3 py-1.5 rounded-lg bg-[#0E3B36] hover:bg-[#092824] text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer"
             title="Scan Medicine Box / Prescription"
+            aria-label="Scan medicine box or prescription"
           >
             <Camera className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Scan</span>
@@ -133,6 +135,7 @@ export const MedicineSearch: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsScanning(false)}
+            aria-label="Cancel medicine scan"
             className="px-4 py-1.5 rounded-lg bg-stone-800 text-xs font-medium hover:bg-stone-700"
           >
             Cancel
@@ -197,6 +200,7 @@ export const MedicineSearch: React.FC = () => {
             <button
               type="button"
               onClick={() => setSelectedMedicine(null)}
+              aria-label="Close medicine details"
               className="p-1 rounded-lg hover:bg-stone-100 text-stone-500"
             >
               <X className="w-5 h-5" />

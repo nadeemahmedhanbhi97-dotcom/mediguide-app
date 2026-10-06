@@ -89,17 +89,19 @@ export const FormulaLibrary: React.FC<FormulaLibraryProps> = ({ initialQuery = '
 
         {/* Explain My Formula Search Input */}
         <form onSubmit={handleExplainFormula} className="mt-5 space-y-2">
-          <label className="text-xs font-bold text-stone-700 block">
+          <label htmlFor="formula-search" className="text-xs font-bold text-stone-700 block">
             Explain My Formula / Chemical Compound:
           </label>
           <div className="flex flex-col sm:flex-row gap-2">
             <div className="relative flex-1">
               <FlaskConical className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
+                id="formula-search"
                 type="text"
                 value={customQuery}
                 onChange={(e) => setCustomQuery(e.target.value)}
                 placeholder="Enter formula or drug name (e.g. C8H9NO2, Paracetamol, Amoxicillin, Metformin)..."
+                aria-label="Search chemical formula or drug name"
                 className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#E8E2D8] rounded-[4px] text-xs sm:text-sm text-[#101827] focus:outline-none focus:ring-1 focus:ring-[#B08D57] focus:border-[#B08D57]"
               />
             </div>

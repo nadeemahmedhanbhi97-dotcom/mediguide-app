@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/medicine/identify",
+      "destination": "/api/identify"
+    }
+  ]
+}

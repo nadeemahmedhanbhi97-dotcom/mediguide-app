@@ -374,6 +374,7 @@ export const MedicalStoreDashboard: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by Bill #, Customer name, Phone, or Medicine name..."
+                aria-label="Search bills by number, customer name, phone, or medicine"
                 className="w-full pl-8 pr-3 py-2 bg-[#FBF8F2] border border-[#D9CFB8] rounded-xs text-xs focus:outline-none focus:ring-1 focus:ring-amber-400"
               />
             </div>
@@ -512,8 +513,10 @@ export const MedicalStoreDashboard: React.FC = () => {
                         <td className="py-2.5 px-3 text-right">
                           <div className="flex items-center justify-end gap-1">
                             <button
+                              type="button"
                               onClick={() => setViewingBillDetail(b)}
                               title="View Bill Details"
+                              aria-label="View bill details"
                               className="p-1 text-stone-500 hover:text-stone-900 hover:bg-[#EDF1EA] rounded-xs"
                             >
                               <Eye className="w-3.5 h-3.5" />
@@ -530,16 +533,20 @@ export const MedicalStoreDashboard: React.FC = () => {
                             )}
 
                             <button
+                              type="button"
                               onClick={() => { setEditingBill(b); setIsNewBillOpen(true); }}
                               title="Edit Bill"
+                              aria-label="Edit bill"
                               className="p-1 text-stone-500 hover:text-stone-800 hover:bg-[#EDF1EA] rounded-xs"
                             >
                               <Edit className="w-3.5 h-3.5" />
                             </button>
 
                             <button
+                              type="button"
                               onClick={() => handleDeleteBill(b.id)}
                               title="Delete Bill"
+                              aria-label="Delete bill"
                               className="p-1 text-stone-400 hover:text-rose-600 hover:bg-rose-50 rounded-xs"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -1257,7 +1264,9 @@ export const MedicalStoreDashboard: React.FC = () => {
                   <Printer className="w-3.5 h-3.5" /> Print
                 </button>
                 <button
+                  type="button"
                   onClick={() => setViewingBillDetail(null)}
+                  aria-label="Close bill details"
                   className="p-1 text-stone-400 hover:text-stone-700"
                 >
                   <X className="w-5 h-5" />
@@ -1404,7 +1413,9 @@ export const MedicalStoreDashboard: React.FC = () => {
                 <p className="text-xs text-stone-500">{viewingCustomerDetail.phone || 'No phone recorded'}</p>
               </div>
               <button
+                type="button"
                 onClick={() => setViewingCustomerDetail(null)}
+                aria-label="Close customer details"
                 className="p-1 text-stone-400 hover:text-stone-700"
               >
                 <X className="w-5 h-5" />

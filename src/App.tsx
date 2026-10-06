@@ -31,7 +31,9 @@ export default function App() {
           </div>
 
           <button
+            type="button"
             onClick={() => setIsCameraOpen(true)}
+            aria-label="Scan medicine with camera"
             className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs rounded-xl shadow-sm transition flex items-center gap-1.5 cursor-pointer"
           >
             📷 Scan Medicine
@@ -41,6 +43,8 @@ export default function App() {
         {/* Tab Navigation Menu */}
         <div className="max-w-4xl mx-auto px-4 flex border-t border-gray-100 gap-2 pt-2 pb-1 overflow-x-auto">
           <button
+            type="button"
+            aria-label="Find doctors"
             onClick={() => setActiveTab('doctors')}
             className={`px-4 py-2 text-xs font-semibold rounded-lg transition ${
               activeTab === 'doctors'
@@ -52,6 +56,8 @@ export default function App() {
           </button>
 
           <button
+            type="button"
+            aria-label="Medicine directory and scanner"
             onClick={() => setActiveTab('medicine')}
             className={`px-4 py-2 text-xs font-semibold rounded-lg transition ${
               activeTab === 'medicine'
@@ -63,6 +69,8 @@ export default function App() {
           </button>
 
           <button
+            type="button"
+            aria-label="AI health chat"
             onClick={() => setActiveTab('chat')}
             className={`px-4 py-2 text-xs font-semibold rounded-lg transition ${
               activeTab === 'chat'
@@ -83,7 +91,9 @@ export default function App() {
               <h2 className="text-lg font-bold text-emerald-900">{scannedMedicine}</h2>
             </div>
             <button 
+              type="button"
               onClick={() => setScannedMedicine(null)}
+              aria-label="Clear scanned medicine"
               className="text-xs text-red-500 hover:underline font-medium"
             >
               Clear

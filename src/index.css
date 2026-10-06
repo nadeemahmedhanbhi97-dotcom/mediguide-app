@@ -32,6 +32,13 @@
     --color-warm-divider: #E8E2D8;
   }
 
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #101827;

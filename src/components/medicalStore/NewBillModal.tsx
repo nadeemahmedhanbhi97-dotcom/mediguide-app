@@ -207,7 +207,7 @@ export const NewBillModal: React.FC<NewBillModalProps> = ({
                 <Camera className="w-3.5 h-3.5 text-[#B08D57]" />
                 Scan / Upload Bill
               </button>
-              <button onClick={onClose} className="p-1 text-stone-400 hover:text-stone-700">
+              <button type="button" onClick={onClose} aria-label="Close new bill form" className="p-1 text-stone-400 hover:text-stone-700">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -311,6 +311,7 @@ export const NewBillModal: React.FC<NewBillModalProps> = ({
                             value={item.productName}
                             onChange={(e) => updateItem(item.id, 'productName', e.target.value)}
                             placeholder="e.g. Panadol 500mg, Augmentin 625mg"
+                            aria-label={`Medicine name for bill item ${idx + 1}`}
                             className="w-full px-2 py-1 bg-[#FBF8F2] border border-[#D9CFB8] rounded-xs text-xs focus:outline-none focus:ring-1 focus:ring-amber-400"
                             required
                           />
